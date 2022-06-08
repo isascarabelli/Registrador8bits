@@ -27,7 +27,7 @@ component bancoRegistra is
           clk1: in std_logic);
 end component;
 
-component demux8x1 is
+component demux1x8 is
 
 port (dme: in std_logic_vector(7 downto 0);
       sel: in std_logic_vector(2 downto 0);
@@ -57,18 +57,18 @@ signal final_clock : std_logic;
 
 begin
 
-  demux : demux8x1
+  demux : demux1x8
   	port map(
   	    dme => ee,
   	    sel => sele,
   	    ds1 => S_s1,
-  	    ds1 => S_s2,
-  	    ds1 => S_s3
-  	    ds1 => S_s4,
-  	    ds1 => S_s5,
-  	    ds1 => S_s6,
-  	    ds1 => S_s7,
-  	    ds1 => S_s8
+  	    ds2 => S_s2,
+  	    ds3 => S_s3,
+  	    ds4 => S_s4,
+  	    ds5 => S_s5,
+  	    ds6 => S_s6,
+  	    ds7 => S_s7,
+  	    ds8 => S_s8
   	);
   		 
 
@@ -111,3 +111,4 @@ begin
 --   clk borda de descida / read = 1 / write = 0
 
 end arch_bc8b;
+
